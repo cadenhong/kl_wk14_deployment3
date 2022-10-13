@@ -1,6 +1,6 @@
 # Deployment 3: Deploying a Web Application (gunicorn, nginx, Flask stack) to a Custom VPC via Jenkins Agent
 
-#### Assignment instructions can be found here: [Deployment3_Instructions.pdf](https://github.com/cadenhong/kl_wk14_deployment3/blob/main/Deployment-3_Assignment.pdf)
+#### Assignment instructions can be found here: [Deployment3_Instructions.pdf](https://github.com/cadenhong/kl_wk14_deployment3/blob/main/Deployment-3_Assignment%20(1).pdf)
 
 ## Tasks
 - Complete the deployment based on provided instructions
