@@ -17,11 +17,14 @@
 <img width="470" alt="image" src="https://user-images.githubusercontent.com/83370640/194993622-1ddf45b2-68ad-4c56-bd7f-5cd46e19954f.png">
 
 6. Connect [this GitHub repository](https://github.com/cadenhong/kl_wk14_deployment3) to Jenkins server via Multibranch build
-7. SSH back into the Kura VPC's EC2 and change configurations inside `/etc/nginx/sites-enabled/default` file to the following:
+7. Install "Pipeline Keep Running Step" plugin on Jenkins server 
+<img width="470" alt="image" src="https://user-images.githubusercontent.com/83370640/195619075-e8e25f64-45bd-48a2-89dc-f6e4bded5760.png">
+
+8. SSH back into the Kura VPC's EC2 and change configurations inside `/etc/nginx/sites-enabled/default` file to the following:
 ```
 server {
   listen 5000;
-  
+  listen [::]:5000 default_server;
 ...
 
 location / {
@@ -30,8 +33,22 @@ location / {
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
   }
 ```
-8. Edit Jenkinsfile in the GitHub repo to include a Deploy stage:
+9. Edit Jenkinsfile in the GitHub repo to include a Clean and Deploy stage:
 ```
+stage ('Clean') {
+      agent{label 'awsDeploy'}
+      steps {
+        sh '''#!/bin/bash
+        if [[ $(ps aux | grep -i "gunicorn" | tr -s " " | head -n 1 | cut -d " " -f 2) != 0 ]]
+        then
+          ps aux | grep -i "gunicorn" | tr -s " " | head -n 1 | cut -d " " -f 2 > pid.txt
+          kill $(cat pid.txt)
+          exit 0
+        fi
+        '''
+  }
+}
+     
 stage ('Deploy') {
       agent{label 'awsDeploy'}
       steps {
@@ -49,7 +66,7 @@ stage ('Deploy') {
 ```
 See the difference between the [original Jenkinsfile](https://github.com/kura-labs-org/kuralabs_deployment_3/blob/main/Jenkinsfile) vs. [edited Jenkinsfile](https://github.com/cadenhong/kl_wk14_deployment3/blob/main/Jenkinsfile)
 
-9. Build and deploy:
+10. Build and deploy:
 <img width="470" alt="image" src="https://user-images.githubusercontent.com/83370640/194993733-2eef8a9f-1ead-498c-ac9a-5a55b4432cf3.png">
 
 
