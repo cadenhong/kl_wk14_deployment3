@@ -93,7 +93,8 @@ Code added inside Jenkinsfile:
 ## nginx-gunicorn-Flask Stack
 My understanding of the stack:
 
-<img width="454" alt="Screen Shot 2022-10-13 at 11 08 46 AM" src="https://user-images.githubusercontent.com/83370640/195619836-6aa49406-9bfb-4194-8812-031941193e0c.png">
+<img width="447" alt="Screen Shot 2022-10-13 at 6 41 58 PM" src="https://user-images.githubusercontent.com/83370640/195716408-4ebe3ac6-80be-401a-870f-9a9553c71aa6.png">
+
 
 
 ## Files and Folders
