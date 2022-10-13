@@ -5,8 +5,11 @@
 ## Tasks
 - Complete the deployment based on provided instructions
 - Include additions made from Deployment 2 to the pipeline
-- Document steps taken and any observations made (see [Deployment3_Documentation.pdf]())
+- Document steps taken and any observations made (see [Deployment3_Documentation.pdf](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Documentation.pdf))
 - Diagram the deployment pipeline and software stacks used (see [Deployment3_Diagram.png](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Diagram.png))
+
+## Deployment Prerequisites
+Set up a custom VPC - see [Deployment3_Prereq_VPC_Setup.pdf](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Prereq_VPC_Setup.pdf) for details on how to set up VPC for this specific deployment.
 
 ## Deployment Steps
 1. Spin up an EC2 instance with Ubuntu AMI and ports 22, 80, and 8080
@@ -97,6 +100,8 @@ My understanding of the stack:
 - [.gitignore](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/.gitignore): Contains files to ignore when pushing to GitHub repository
 - [Deployment3_Diagram.png](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Diagram.png): Diagram of the pipeline
 - [Deployment3_Documentation.docx](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Documentation.docx): Word file of notes and observations made during deployment
+- [Deployment3_Documentation.pdf](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Documentation.pdf): PDF of notes and observations made during deployment
+- [Deployment3_Prereq_VPC_Setup.pdf](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/Deployment3_Prereq_VPC_Setup.pdf): PDF of VPC creation required prior to doing this deployment
 - [setup_VPC_pub_ec2.sh](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/setup_VPC_pub_ec2.sh): Bash script to setup and install required packages on Kura VPC's EC2
 - [setup_jenkins.sh](https://github.com/cadenhong/kl_wk14_deployment3_organized/blob/main/setup_jenkins.sh): Bash script to setup and install Jenkins
 
